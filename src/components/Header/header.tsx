@@ -1,12 +1,13 @@
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import { AppBar, Box, InputBase, Toolbar, Typography } from "@mui/material";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { AppBar, Badge, Box, IconButton, InputBase, Toolbar, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const Search = styled('div')(() => ({
   position: 'relative',
   height: 50,
-  border: '1px solid black',
+  border: '1px solid #F0F4FB',
   borderRadius: 25,
   width: '100%',
 }));
@@ -29,9 +30,10 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(() => ({
   height: '100%',
+  width: '100%',
   fontSize: '1.6em',
   paddingLeft: 20,
-  paddingRight: 100,
+  paddingRight: 110,
 }));
 
 
@@ -64,7 +66,7 @@ export default function Header() {
               Александровск-Са...
             </Typography>
           </Box>
-          <Search>
+          <Search className="search-container">
             <SearchIconWrapper>
               <SearchIcon fontSize="large" />
             </SearchIconWrapper>
@@ -73,6 +75,11 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <IconButton size="large">
+            <Badge badgeContent="10+" color="default">
+              <ShoppingCartOutlinedIcon />
+            </Badge>
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Box >
